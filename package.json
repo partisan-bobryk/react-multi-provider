@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "react": "^16.8.6",
+    "webpack": "^4.35.0"
+  },
+  "name": "react-multi-provider",
+  "version": "0.1.0",
+  "description": "Component for ReactJS to help handle context without creating a sideways pyramid.",
+  "main": "index.js",
+  "repository": "git@github.com:VeprUA/react-multi-provider.git",
+  "author": "Maksym Yadvinskyy <myadvinskyy@akitabox.com>",
+  "license": "MIT",
+  "private": false
+}
