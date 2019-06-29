@@ -13,6 +13,8 @@ Allows for nesting of multiple of providers with out the sideways pyramid
     <CustomProvider2>,
     <CustomProvider3>
   ]}>
-  <Foo/>
+  <NestedComponents/>
 </MultiProvider>
 ```
+
+For a detailed examples see `/examples/src/`

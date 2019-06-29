@@ -1,25 +1,31 @@
-import React from "react";
+import React from 'react';
 
-export default function MultiProvider(props) {
-  let content;
+const MultiProvider = (props) => {
+  let content = props.children || null;
 
-  if (!props.providers.length) {
+  /* Error/Validation */
+  if (!props.providers) {
+    throw "MultiProvider: Missing providers prop";
+  }
+
+  if (!props.children) {
+    throw "MultiProvider: Missing children";
+  }
+
+  // Turn object into an array
+  // const numberOfProviders = props.providers.size;
+  const numberOfProviders = props.providers.length;
+
+  if (!numberOfProviders) {
+    // Providers prop is empty, r
     return content;
   }
 
-  content = React.createElement(props.providers[0]);
-
-  if (props.providers.length === 1) {
-    return content;
-  }
-
-  props.providers.forEach((provider, index) => {
-    if (index === 0) {
-      return;
-    }
-
-    content = React.createElement(provider, null, content);
+  props.providers.forEach((provider) => {
+    content = React.cloneElement(provider, null, content);
   });
 
-  return React.createElement(content, null, props.children);
+  return content;
 }
+
+export default MultiProvider;

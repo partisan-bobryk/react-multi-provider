@@ -1,14 +1,35 @@
 {
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "react": "^16.8.6",
-    "webpack": "^4.35.0"
+    "react-dom": "^16.8.6",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "name": "react-multi-provider",
   "version": "0.1.0",
-  "description": "Component for ReactJS to help handle context without creating a sideways pyramid.",
-  "main": "index.js",
+  "description": "Component for ReactJS to help handle multiple contexts without creating a sideways pyramid.",
+  "main": "dist/index.js",
   "repository": "git@github.com:VeprUA/react-multi-provider.git",
-  "author": "Maksym Yadvinskyy <myadvinskyy@akitabox.com>",
+  "author": "Maksym Yadvinskyy <maksym.yadvinskyy@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "npm run transpile"
+  }
 }
