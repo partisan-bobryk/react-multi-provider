@@ -1,3 +1,5 @@
+# react-multi-provider
+
 This package was created to help clean up the nasty code you get from taking advantage of React Context API.
 
 Transform your code from something that looks like this
