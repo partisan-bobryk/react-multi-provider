@@ -25,6 +25,18 @@
   "repository": "git@github.com:VeprUA/react-multi-provider.git",
   "author": "Maksym Yadvinskyy <maksym.yadvinskyy@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "reactjs",
+    "js",
+    "provider",
+    "context",
+    "context api",
+    "contextapi",
+    "jsx",
+    "api",
+    "multiprovider"
+  ],
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development",
