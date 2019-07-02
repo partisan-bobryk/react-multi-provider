@@ -52,7 +52,7 @@ Then take the nested providers and pass them into a `providers` prop.
   </MultiProvider>
 ```
 
-Checkout a more detailed example in the `examples/src/` directory of this repo.
+Check out a more detailed example in the `examples/src/` directory of this repo.
 
 ## Notes
 For those of you who are Flutter fans will know that the inspiration for this package came from `provider`. Special thanks to the author!
