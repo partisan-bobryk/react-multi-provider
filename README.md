@@ -3,7 +3,7 @@
 This package was created to help clean up the nasty code you get from taking advantage of React Context API.
 
 Transform your code from something that looks like this
-```javascript
+```html
   <ContextProvider1>
     <ContextProvider2>
       <ContextProvider3>
@@ -16,7 +16,7 @@ Transform your code from something that looks like this
 ```
 
 to something like this
-```javascript
+```html
   <MultiProvider
     providers={[
       <ContextProvider1/>,
@@ -43,9 +43,9 @@ To use this component it is really simple and easy. Start by importing it after 
 ```
 
 Then take the nested providers and pass them into a `providers` prop.
-```javascript
+```html
   <MultiProvider providers={[
-    <FooContextProvider value="foo context value"/>
+    <FooContextProvider value="foo context value"/>,
     <BarContextProvider value="bar context value"/>
   ]}>
     <ExampleComponent/>
