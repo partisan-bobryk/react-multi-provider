@@ -1,18 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { render } from "react-dom";
-import { MultiProvider } from "../dist/react-multi-provider";
+import { MultiProvider } from "react-multi-provider";
 // Example Context
-import {
-  FooConsumer,
-  FooProvider,
-  BarConsumer,
-  BarProvider,
-} from "./context/Custom.context";
+import { BarContext, FooContext } from "./context/Custom.context";
 
 const App = () => {
   const providerList = [
-    <FooProvider value="Context Coming from Foo" />,
-    <BarProvider value="Context Comming from Bar" />,
+    <FooContext.Provider value="Jeff" />,
+    <BarContext.Provider value={999} />,
   ];
 
   return (
@@ -27,11 +22,14 @@ const Parent = (props) => {
 };
 
 const Child = () => {
+  const fooValue = useContext(FooContext);
+  const barValue = useContext(BarContext);
+
   return (
     <>
-      <h3>Consumer</h3>
-      <FooConsumer>{(fooContext) => <p>{fooContext}</p>}</FooConsumer>
-      <BarConsumer>{(barContext) => <p>{barContext}</p>}</BarConsumer>
+      <p>
+        Hello, I am {fooValue} and I am {barValue} old
+      </p>
     </>
   );
 };
