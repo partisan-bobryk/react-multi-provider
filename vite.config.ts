@@ -1,14 +1,13 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import react from "@vitejs/plugin-react";
-
+import dts from "vite-plugin-dts";
 export default defineConfig({
-  plugins: [react()],
-  root: "./examples",
+  plugins: [react(), dts({ exclude: ["**/test/**"] })],
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/index.ts"),
-      name: "MultiProvider",
+      entry: resolve(__dirname, "lib/index.tsx"),
+      name: "react-multi-provider",
       fileName: "react-multi-provider",
       formats: ["es", "cjs", "umd"],
     },
@@ -18,6 +17,7 @@ export default defineConfig({
         globals: {
           react: "React",
         },
+        sourcemap: true,
       },
     },
   },

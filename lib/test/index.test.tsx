@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { MultiProvider, MultiProviderProps } from "../MultiProvider";
+import { MultiProvider, MultiProviderProps } from "..";
 import React from "react";
 
 describe("component:MultiProvider", () => {
