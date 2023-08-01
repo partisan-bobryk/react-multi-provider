@@ -1,21 +1,21 @@
 {
-  "devDependencies": {
-    "@testing-library/react": "^14.0.0",
-    "@types/react": "^18.2.18",
-    "@vitejs/plugin-react": "^4.0.4",
-    "jsdom": "^22.1.0",
-    "react": "^18.2.0",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.7",
-    "vitest": "^0.33.0"
-  },
   "name": "react-multi-provider",
-  "version": "0.2.0",
   "description": "Component for ReactJS to help handle multiple contexts without creating a sideways pyramid.",
-  "main": "dist/index.js",
+  "version": "1.0.0",
   "repository": "https://github.com/byte-partisan/react-multi-provider",
-  "author": "Maksym Yadvinskyy <maks@revent.studio>",
-  "license": "MIT",
+  "author": "Maks Yadvinskyy <maks@revent.studio>",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/react-multi-provider.cjs",
+  "module": "./dist/react-multi-provider.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-multi-provider.js",
+      "require": "./dist/react-multi-provider.cjs"
+    }
+  },
   "keywords": [
     "react",
     "reactjs",
@@ -30,6 +30,24 @@
   ],
   "private": false,
   "scripts": {
-    "test": "vitest"
-  }
+    "test": "vitest",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "publish": "npm publish"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.2.18",
+    "@vitejs/plugin-react": "^4.0.4",
+    "jsdom": "^22.1.0",
+    "react": "^18.2.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7",
+    "vitest": "^0.33.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "license": "MIT"
 }

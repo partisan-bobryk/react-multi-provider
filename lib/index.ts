@@ -1,1 +1,3 @@
-export * from "./MultiProvider";
+import * as MultiProvider from "./MultiProvider";
+
+export { MultiProvider };

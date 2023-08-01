@@ -1,4 +1,4 @@
-import { describe, expect, it, test } from "vitest";
+import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MultiProvider, MultiProviderProps } from "../MultiProvider";
 import React from "react";
@@ -30,7 +30,9 @@ describe("component:MultiProvider", () => {
       MultiProvider({} as MultiProviderProps);
     } catch (err) {
       expect(err).toBeDefined();
-      expect(err?.message).toBe("MultiProvider: Missing providers prop");
+      expect((err as Error)?.message).toBe(
+        "MultiProvider: Missing providers prop"
+      );
     }
   });
 
@@ -42,7 +44,7 @@ describe("component:MultiProvider", () => {
       MultiProvider(props as MultiProviderProps);
     } catch (err) {
       expect(err).toBeDefined();
-      expect(err?.message).toBe("MultiProvider: Missing children");
+      expect((err as Error).message).toBe("MultiProvider: Missing children");
     }
   });
 
